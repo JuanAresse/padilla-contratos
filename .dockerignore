@@ -1,0 +1,10 @@
+**/node_modules
+**/.env
+**/.env.*
+**/.git
+**/storage
+**/data
+**/templates
+**/private-templates
+**/*.log
+**/test-artifacts

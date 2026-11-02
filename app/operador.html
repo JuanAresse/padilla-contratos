@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Operador - Ramasco Padilla</title>
+    <link rel="stylesheet" href="./styles-red-6.css?v=popup-modal-final-20260902" />
+  </head>
+  <body>
+    <main class="standalone">
+      <header class="site-header">
+        <div class="brand brand-light">
+          <img src="./assets/isotipo.png" alt="" />
+          <div>
+            <strong>Operador</strong>
+            <span>Ramasco Padilla</span>
+          </div>
+        </div>
+        <div class="toolbar-actions">
+          <span id="storageStatus">Pagina interna lista</span>
+          <button id="loadProperties" class="secondary-button" type="button">Actualizar</button>
+        </div>
+      </header>
+
+      <section class="toolbar">
+        <div>
+          <h1>Operador / inmobiliaria</h1>
+          <p>Datos de locatario, garantes y documentos agrupados por propiedad.</p>
+        </div>
+      </section>
+
+      <div class="split">
+        <article class="summary-panel">
+          <h2>Propiedades</h2>
+          <div id="propertyList" class="list"></div>
+        </article>
+
+        <div class="form-grid compact">
+          <form id="operationForm" class="form-grid compact">
+            <fieldset>
+              <legend>Operacion</legend>
+              <label>Direccion seleccionada<input id="selectedPropertyAddress" name="propertyAddress" readonly /></label>
+              <input id="selectedReservationId" name="reservationId" type="hidden" />
+              <label>Fecha de reserva<input name="reservationDate" type="date" required /></label>
+              <label>Monto de reserva<input name="reservationAmount" type="number" min="0" required /></label>
+              <label>Monto en letras<input name="reservationAmountWords" required /></label>
+              <label>Gastos de informes<input name="reportsAmount" type="number" min="0" /></label>
+              <label>Gastos en letras<input name="reportsAmountWords" /></label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Propietario</legend>
+              <label>
+                Tratamiento
+                <select name="landlordTitle" required>
+                  <option value="">Seleccionar</option>
+                  <option>Sr.</option>
+                  <option>Sra.</option>
+                </select>
+              </label>
+              <label>Nombre y apellido<input name="landlordFullName" required /></label>
+              <label>DNI<input name="landlordDni" required inputmode="numeric" pattern="[0-9]{7,8}" title="Ingrese 7 u 8 digitos, sin puntos ni guiones" /></label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Contrato interno</legend>
+              <label>Numero de contrato<input name="contractNumber" /></label>
+            </fieldset>
+
+            <div class="form-actions">
+              <button class="primary-button" type="submit">Guardar operacion</button>
+            </div>
+            <div id="operationSaveNotice" class="form-notice" role="status" aria-live="polite" hidden></div>
+          </form>
+
+          <article class="summary-panel">
+            <h2>Generar documentos</h2>
+            <div id="pdfActions" class="download-row">
+              <p class="empty-state">Selecciona una propiedad para generar los documentos.</p>
+            </div>
+          </article>
+
+          <article class="summary-panel">
+            <h2>Datos relacionados</h2>
+            <div id="propertyDetail" class="detail-stack"></div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <script src="./app.js?v=popup-modal-final-20260902"></script>
+  </body>
+</html>

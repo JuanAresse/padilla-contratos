@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Garante - Ramasco Padilla</title>
+    <link rel="stylesheet" href="./styles-red-6.css?v=popup-modal-final-20260902" />
+  </head>
+  <body>
+    <main class="standalone">
+      <header class="site-header">
+        <div class="brand brand-light">
+          <img src="./assets/isotipo.png" alt="" />
+          <div>
+            <strong>Garante</strong>
+            <span>Ramasco Padilla</span>
+          </div>
+        </div>
+        <span id="storageStatus">Formulario listo</span>
+      </header>
+
+      <section class="toolbar">
+        <div>
+          <h1>FORMULARIO GARANTES</h1>
+        </div>
+      </section>
+
+      <section class="form-intro"><p>Edicion de portfolio. Complete los campos de su propia instalacion local. No hay datos precargados ni conexion con el servicio operativo.</p></section>
+
+      <form id="guarantorForm" class="form-grid">
+        <fieldset>
+          <legend>Reserva relacionada</legend>
+          <label>Direccion del inmueble reservado<input name="propertyAddress" required /></label>
+          <label>Nombre y apellido del inquilino<input name="tenantFullName" required /></label>
+          <label>
+            Vinculo con el reservante
+            <select name="relationship" required>
+              <option value="">Seleccionar</option>
+              <option>Familiar</option>
+              <option>Amigo</option>
+              <option>Vinculo laboral</option>
+              <option>Otros</option>
+            </select>
+          </label>
+          <label>
+            Forma de garantia
+            <select name="guaranteeType" required>
+              <option value="">Seleccionar</option>
+              <option>Garante propietario</option>
+              <option>Garante laboral</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Lectura de DNI</legend>
+          <p class="section-note" data-ocr-status="guarantorForm">Lectura local opcional. Revise los campos detectados antes de guardar.</p>
+          <label>DNI frente<input name="dniFront" type="file" accept="image/*" required /></label>
+          <label>DNI dorso<input name="dniBack" type="file" accept="image/*" required /></label>
+          <div class="field-note">
+            <button class="secondary-button ocr-button" data-ocr-target="guarantorForm" type="button">Leer DNI</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Datos personales del garante</legend>
+          <label>Tratamiento<select name="title" required><option>Sr.</option><option>Sra.</option></select></label>
+          <label>Nombre completo<input name="fullName" required /></label>
+          <label>CUIT / CUIL<input name="cuil" required inputmode="tel" pattern="([0-9]{11}|[0-9]{2}-[0-9]{8}-[0-9])" title="Ingrese 11 digitos, con o sin guiones" /></label>
+          <label>DNI<input name="dni" required inputmode="numeric" pattern="[0-9]{7,8}" title="Ingrese 7 u 8 digitos, sin puntos ni guiones" /></label>
+          <label>Apellido materno<input name="maternalSurname" required /></label>
+          <label>Fecha de nacimiento<input name="birthDate" required type="date" /></label>
+          <label>
+            Estado civil
+            <select name="maritalStatus" required>
+              <option value="">Seleccionar</option>
+              <option>Soltero/a</option>
+              <option>Casado/a</option>
+              <option>Divorciado/a</option>
+              <option>Viudo/a</option>
+            </select>
+          </label>
+          <label>Nacionalidad<input name="nationality" required /></label>
+          <label>Profesion / actividad<input name="occupation" required /></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Domicilio y contacto</legend>
+          <p class="section-note">Complete los campos requeridos para su instalacion local.</p>
+          <label>Calle<input name="street" required /></label>
+          <label>Numero<input name="number" required /></label>
+          <label>Piso<input name="floor" required /></label>
+          <label>Departamento<input name="apartment" required /></label>
+          <label>Localidad<input name="city" required /></label>
+          <label>Provincia<input name="province" required /></label>
+          <p class="section-note">Complete los campos requeridos para su instalacion local.</p>
+          <label>Telefono celular<input name="phone" required inputmode="tel" pattern="[0-9+() .-]{6,30}" title="Ingrese un telefono valido" /></label>
+          <label>Correo electronico<input name="email" required type="email" /></label>
+          <label>Recibos/escritura<input name="supportFiles" type="file" multiple accept="image/*,.pdf" required /></label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button class="primary-button" type="submit">Guardar garante</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="./app.js?v=popup-modal-final-20260902"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Locatario - Ramasco Padilla</title>
+    <link rel="stylesheet" href="./styles-red-6.css?v=tenant-title-20260902" />
+  </head>
+  <body>
+    <main class="standalone">
+      <header class="site-header">
+        <div class="brand brand-light">
+          <img src="./assets/isotipo.png" alt="" />
+          <div>
+            <strong>Locatario</strong>
+            <span>Ramasco Padilla</span>
+          </div>
+        </div>
+        <span id="storageStatus">Formulario listo</span>
+      </header>
+
+      <section class="toolbar">
+        <div>
+          <h1>FORMULARIO DE RESERVA</h1>
+        </div>
+      </section>
+
+      <section class="form-intro"><p>Edicion de portfolio. Complete los campos de su propia instalacion local. No hay datos precargados ni conexion con el servicio operativo.</p></section>
+
+      <form id="reservationForm" class="form-grid">
+        <fieldset>
+          <legend>Inmueble reservado</legend>
+          <label>Direccion del inmueble<input name="propertyAddress" required /></label>
+          <label>
+            Productor comercial
+            <input name="advisor" required />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Lectura de DNI</legend>
+          <p class="section-note" data-ocr-status="reservationForm">Lectura local opcional. Revise los campos detectados antes de guardar.</p>
+          <label>DNI frente<input name="dniFront" type="file" accept="image/*" required /></label>
+          <label>DNI dorso<input name="dniBack" type="file" accept="image/*" required /></label>
+          <div class="field-note">
+            <button class="secondary-button ocr-button" data-ocr-target="reservationForm" type="button">Leer DNI</button>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Datos personales del reservante</legend>
+          <label>
+            Tratamiento
+            <select name="tenantTitle" required>
+              <option value="">Seleccionar</option>
+              <option>Sr.</option>
+              <option>Sra.</option>
+            </select>
+          </label>
+          <label>Nombre/s y apellido/s<input name="tenantFullName" required /></label>
+          <label>CUIT / CUIL<input name="tenantCuil" required inputmode="tel" pattern="([0-9]{11}|[0-9]{2}-[0-9]{8}-[0-9])" title="Ingrese 11 digitos, con o sin guiones" /></label>
+          <label>DNI<input name="tenantDni" required inputmode="numeric" pattern="[0-9]{7,8}" title="Ingrese 7 u 8 digitos, sin puntos ni guiones" /></label>
+          <label>Apellido materno<input name="tenantMaternalSurname" required /></label>
+          <label>Fecha de nacimiento<input name="tenantBirthDate" required type="date" /></label>
+          <label>Nacionalidad<input name="tenantNationality" required /></label>
+          <label>Profesion / actividad<input name="tenantOccupation" required /></label>
+          <label>
+            Condicion fiscal
+            <select name="tenantTaxStatus" required>
+              <option value="">Seleccionar</option>
+              <option>Consumidor final</option>
+              <option>Monotributista</option>
+              <option>Responsable inscripto</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Domicilio actual</legend>
+          <p class="section-note">Complete los campos requeridos para su instalacion local.</p>
+          <label>Calle<input name="currentStreet" required /></label>
+          <label>Numero<input name="currentNumber" required /></label>
+          <label>Piso<input name="currentFloor" required /></label>
+          <label>Departamento<input name="currentApartment" required /></label>
+          <label>Localidad<input name="currentCity" required /></label>
+          <label>Provincia<input name="currentProvince" required /></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Domicilio alternativo</legend>
+          <p class="section-note">Complete los campos requeridos para su instalacion local.</p>
+          <label>Calle<input name="alternateStreet" required /></label>
+          <label>Numero<input name="alternateNumber" required /></label>
+          <label>Piso<input name="alternateFloor" required /></label>
+          <label>Departamento<input name="alternateApartment" required /></label>
+          <label>Localidad<input name="alternateCity" required /></label>
+          <label>Provincia<input name="alternateProvince" required /></label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Contacto y documentacion</legend>
+          <p class="section-note">Complete los campos requeridos para su instalacion local.</p>
+          <label>Telefono celular<input name="tenantPhone" required inputmode="tel" pattern="[0-9+() .-]{6,30}" title="Ingrese un telefono valido" /></label>
+          <label>Correo electronico<input name="tenantEmail" required type="email" /></label>
+          <label>Comprobante de seña<input name="paymentProof" type="file" accept="image/*,.pdf" required /></label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button class="primary-button" type="submit">Guardar reserva</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="./app.js?v=tenant-title-20260902"></script>
+  </body>
+</html>
